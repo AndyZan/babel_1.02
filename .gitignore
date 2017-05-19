@@ -1,5 +1,3 @@
-
-.babelrc
 .idea/1.01.iml
 .idea/dictionaries/
 .idea/inspectionProfiles/
@@ -8,13 +6,6 @@
 .idea/modules.xml
 .idea/mongoSettings.xml
 .idea/workspace.xml
-aphorisms.js
 data/
 dl.mongodb.org/
-insert.js
 node_modules/
-package.json
-public/
-rollup.config.js
-routes/
-src/
