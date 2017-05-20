@@ -222,6 +222,52 @@ var Grid = function (_React$Component) {
     return Grid;
 }(React.Component);
 
+/*
+const Layer = (props) => {
+    return(
+        {props.aphorism._id}
+    );
+};
+*/
+
+var addAphorism = function (_React$component) {
+    inherits(addAphorism, _React$component);
+
+    function addAphorism() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        classCallCheck(this, addAphorism);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = addAphorism.__proto__ || Object.getPrototypeOf(addAphorism)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            aphorisms: []
+        }, _temp), possibleConstructorReturn(_this, _ret);
+    }
+
+    createClass(addAphorism, [{
+        key: "componentWillMount",
+        value: function componentWillMount() {
+            var _this2 = this;
+
+            fetch("/aphorisms").then(function (response) {
+                if (response.status == 200) {
+                    response.json().then(function (response) {
+                        _this2.setState({
+                            "aphorism": response
+                        });
+                    });
+                }
+            });
+        }
+    }]);
+    return addAphorism;
+}(React.component);
+
 var Container = function (_React$Component) {
     inherits(Container, _React$Component);
 
@@ -251,7 +297,7 @@ var Container = function (_React$Component) {
         }
     }, {
         key: "addAphorism",
-        value: function addAphorism() {
+        value: function addAphorism$$1() {
             this.setState({
                 plusAphorism: !this.state.plusAphorism
             });
@@ -296,7 +342,7 @@ var Container = function (_React$Component) {
                     )
                 ),
                 this.state.showMore ? React.createElement(Grid, null) : null,
-                this.state.plusAphorism ? React.createElement(AddAphorism, null) : null
+                this.state.plusAphorism ? React.createElement(addAphorism, null) : null
             );
         }
     }]);
