@@ -6,7 +6,6 @@ const LoadingAdd = () => {
     )
 };
 
-
 const Layer = (props) => {
     return (
         <tr>
