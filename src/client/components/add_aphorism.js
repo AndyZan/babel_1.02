@@ -43,7 +43,7 @@ export default class addAphorism extends React.component {
     render() {
         const content = this.state.aphorisms.length ?
             this.state.aphorisms.map(aphorism => <Layer key={aphorism._id} aphorism={aphorism} onDestroy={this.onDestroy.bind(this)} />) :
-            <LoadingAdd/>
+            <LoadingAdd/>;
     }
 
 };

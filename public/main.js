@@ -317,8 +317,8 @@ var Container = function (_React$Component) {
             });
         }
     }, {
-        key: "toggleAddAphorism",
-        value: function toggleAddAphorism() {
+        key: "togglePlusAphorism",
+        value: function togglePlusAphorism() {
             this.setState({
                 plusAphorism: !this.state.plusAphorism
             });
@@ -355,7 +355,7 @@ var Container = function (_React$Component) {
                             React.createElement(
                                 "a",
                                 { href: "#", onClick: function onClick() {
-                                        _this2.toggleAddAphorism();
+                                        _this2.togglePlusAphorism();
                                     } },
                                 !this.state.plusAphorism ? "Add" : "Back"
                             )

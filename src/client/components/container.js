@@ -1,5 +1,5 @@
 import Grid from "./grid";
-import LoadingAdd from "./add_aphorism";
+import LoadAphorism from "./add_aphorism";
 
 export default class Container extends React.Component {
     state = {
@@ -13,7 +13,7 @@ export default class Container extends React.Component {
         });
     }
 
-    toggleAddAphorism() {
+    togglePlusAphorism() {
         this.setState({
             plusAphorism: !this.state.plusAphorism
         });
@@ -28,12 +28,13 @@ export default class Container extends React.Component {
                 <nav>
                     <ul>
                         <li><a href="#" onClick={() => {this.toggleShowMore()}}>{!this.state.showMore ? "Load more" : "Hide"}</a></li>
-                        <li><a href="#" onClick={() => {this.toggleAddAphorism()}}>{!this.state.plusAphorism ? "Add" : "Back"}</a></li>
+                        <li><a href="#" onClick={() => {this.togglePlusAphorism()}}>{!this.state.plusAphorism ? "Add" : "Back"}</a></li>
                     </ul>
                 </nav>
                 {this.state.showMore ? <Grid /> : null}
-                {this.state.plusAphorism ? <LoadingAdd /> : null}
+                {this.state.plusAphorism ? <LoadAphorism /> : null}
             </div>
+
         )
     }
 }
