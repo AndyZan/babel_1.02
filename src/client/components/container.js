@@ -1,5 +1,5 @@
 import Grid from "./grid";
-import Plus from "./add_aphorism";
+import AddAphorism from "./add_aphorism";
 
 export default class Container extends React.Component {
     state = {
@@ -13,7 +13,7 @@ export default class Container extends React.Component {
         });
     }
 
-    addAphorism(){
+    addAphorism() {
         this.setState({
             plusAphorism: !this.state.plusAphorism
         });
@@ -32,7 +32,7 @@ export default class Container extends React.Component {
                     </ul>
                 </nav>
                 {this.state.showMore ? <Grid /> : null}
-                {this.state.plusAphorism ? <Plus /> : null}
+                {this.state.plusAphorism ? <AddAphorism /> : null}
             </div>
         )
     }
