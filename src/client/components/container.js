@@ -28,7 +28,7 @@ export default class Container extends React.Component {
                 <nav>
                     <ul>
                         <li><a href="#" onClick={() => {this.toggleShowMore()}}>{!this.state.showMore ? "Load more" : "Hide"}</a></li>
-                        <li><a href="#" onClick={() => {this.addAphorism()}}>{!this.state.plusAphorism ? "Add" : "del"}</a></li>
+                        <li><a href="#" onClick={() => {this.addAphorism()}}>{!this.state.plusAphorism ? "Add" : "Back"}</a></li>
                     </ul>
                 </nav>
                 {this.state.showMore ? <Grid /> : null}
