@@ -222,13 +222,23 @@ var Grid = function (_React$Component) {
     return Grid;
 }(React.Component);
 
-/*
-const Layer = (props) => {
-    return(
-        {props.aphorism._id}
+var LoadingAdd = function LoadingAdd() {
+    return React.createElement(
+        "div",
+        null,
+        "AddForm"
     );
 };
-*/
+
+var Layer = function Layer(props) {
+    return React.createElement(
+        "tr",
+        null,
+        props.aphorism._id,
+        props.aphorism.author,
+        props.aphorism.text
+    );
+};
 
 var addAphorism = function (_React$component) {
     inherits(addAphorism, _React$component);
@@ -262,7 +272,18 @@ var addAphorism = function (_React$component) {
                         });
                     });
                 }
+            }).catch(function (error) {
+                console.log(error);
             });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this3 = this;
+
+            var content = this.state.aphorisms.length ? this.state.aphorisms.map(function (aphorism) {
+                return React.createElement(Layer, { key: aphorism._id, aphorism: aphorism, onDestroy: _this3.onDestroy.bind(_this3) });
+            }) : React.createElement(LoadingAdd, null);
         }
     }]);
     return addAphorism;
@@ -296,8 +317,8 @@ var Container = function (_React$Component) {
             });
         }
     }, {
-        key: "addAphorism",
-        value: function addAphorism$$1() {
+        key: "toggleAddAphorism",
+        value: function toggleAddAphorism() {
             this.setState({
                 plusAphorism: !this.state.plusAphorism
             });
@@ -334,7 +355,7 @@ var Container = function (_React$Component) {
                             React.createElement(
                                 "a",
                                 { href: "#", onClick: function onClick() {
-                                        _this2.addAphorism();
+                                        _this2.toggleAddAphorism();
                                     } },
                                 !this.state.plusAphorism ? "Add" : "Back"
                             )
